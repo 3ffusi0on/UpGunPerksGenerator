@@ -1,0 +1,346 @@
+[
+  {
+    "name": "Boost Local",
+    "img": "/perks_assets/Personnage/Buff_local_car.png"
+  },
+  {
+    "name": "Auto réparation",
+    "img": "/perks_assets/Personnage/Autorepair_car.png"
+  },
+  {
+    "name": "Tir chargé",
+    "img": "/perks_assets/Personnage/Charged_spray_car.png"
+  },
+  {
+    "name": "Explosion Contrôlée",
+    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+  },
+  {
+    "name": "Dash",
+    "img": "/perks_assets/Personnage/Dash.png"
+  },
+  {
+    "name": "Clone",
+    "img": "/perks_assets/Personnage/Diversion.png"
+  },
+  {
+    "name": "Grappin",
+    "img": "/perks_assets/Personnage/Grappin.png"
+  },
+  {
+    "name": "Slam",
+    "img": "/perks_assets/Personnage/SLAM.png"
+  },
+  {
+    "name": "Glissade",
+    "img": "/perks_assets/Personnage/Glissade.png"
+  },
+  {
+    "name": "Disque de téléportation",
+    "img": "/perks_assets/Personnage/DisqueTeleportation.png"
+  },
+  {
+    "name": "Regard perçant",
+    "img": "/perks_assets/Personnage/RegardPercant.png"
+  },
+  {
+    "name": "Charge lourde",
+    "img": "/perks_assets/Personnage/Charged_spray_car.png"
+  },
+  {
+    "name": "Fusil de feu",
+    "img": "/perks_assets/ExtensionArme/Shotgun_car.png"
+  },
+  {
+    "name": "Boost multiplié",
+    "img": "/perks_assets/Personnage/Buff_multiplier_car.png"
+  },
+  {
+    "name": "Explosion Contrôlée Condensée",
+    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+  },
+  {
+    "name": "Explosion Contrôlée Spécialisée",
+    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+  },
+  {
+    "name": "Dash percutant",
+    "img": "/perks_assets/Personnage/DashPercutant.png"
+  },
+  {
+    "name": "Clone explosif",
+    "img": "/perks_assets/Personnage/DiversionExplo.png"
+  },
+  {
+    "name": "Clone armée",
+    "img": "/perks_assets/Personnage/Decoy_shoot_car.png"
+  },
+  {
+    "name": "Clone vaudou",
+    "img": "/perks_assets/Personnage/DiversionVaudoue.png"
+  },
+  {
+    "name": "Grappin aiguisé",
+    "img": "/perks_assets/Personnage/Grapplinghook_sharp_car.png"
+  },
+  {
+    "name": "Long slide",
+    "img": "/perks_assets/Personnage/Glissade.png"
+  },
+  {
+    "name": "Dash enflammé",
+    "img": "/perks_assets/Personnage/Dash.png"
+  },
+  {
+    "name": "Tremblement de terre",
+    "img": "/perks_assets/Personnage/SLAM.png"
+  },
+  {
+    "name": "Dernière flamme",
+    "img": "/perks_assets/Personnage/DerniereFlamme.png"
+  },
+  {
+    "name": "Chargeur volant",
+    "img": "/perks_assets/Personnage/Flying_magazine_car.png"
+  },
+  {
+    "name": "Excitation",
+    "img": "/perks_assets/Personnage/Excitation.png"
+  },
+  {
+    "name": "Refroidissement",
+    "img": "/perks_assets/Personnage/AsDuRechargement.png"
+  },
+  {
+    "name": "Boost de vie",
+    "img": "/perks_assets/Personnage/VieAFoison.png"
+  },
+  {
+    "name": "Casque",
+    "img": "/perks_assets/Personnage/Casque.png"
+  },
+  {
+    "name": "Super saut",
+    "img": "/perks_assets/Personnage/SuperSaut.png"
+  },
+  {
+    "name": "Grenade post mortem",
+    "img": "/perks_assets/Personnage/Last_grenade_car.png"
+  },
+  {
+    "name": "Rage de vivre",
+    "img": "/perks_assets/Personnage/RageDeVivre.png"
+  },
+  {
+    "name": "Omniscient",
+    "img": "/perks_assets/Personnage/Omniscient.png"
+  },
+  {
+    "name": "Régénération",
+    "img": "/perks_assets/Personnage/Regeneration.png"
+  },
+  {
+    "name": "Pro du rechargement",
+    "img": "/perks_assets/Personnage/AsDuRechargement.png"
+  },
+  {
+    "name": "Réparateur",
+    "img": "/perks_assets/Personnage/Reparateur.png"
+  },
+  {
+    "name": "Reset",
+    "img": "/perks_assets/Personnage/NouveauDepart.png"
+  },
+  {
+    "name": "Mollets d'acier",
+    "img": "/perks_assets/Personnage/MolletsDacier.png"
+  },
+  {
+    "name": "Je t'ai en mire",
+    "img": "/perks_assets/Personnage/Sight_iron_boost_car.png"
+  },
+  {
+    "name": "Rage de courir",
+    "img": "/perks_assets/Personnage/Rage_to_run_car.png"
+  },
+  {
+    "name": "Crampon non réglementés",
+    "img": "/perks_assets/Personnage/Crampons.png"
+  },
+  {
+    "name": "Laser collatéral",
+    "img": "/perks_assets/ExtensionArme/Laser.png"
+  },
+  {
+    "name": "Laser réfléchi",
+    "img": "/perks_assets/ExtensionArme/Laser.png"
+  },
+  {
+    "name": "Viseur laser",
+    "img": "/perks_assets/Arme/ViseurLaser.png"
+  },
+  {
+    "name": "Boomerang",
+    "img": "/perks_assets/Arme/LaChancla.png"
+  },
+  {
+    "name": "Ricochet",
+    "img": "/perks_assets/Arme/Ricochets.png"
+  },
+  {
+    "name": "Balles aiguisées",
+    "img": "/perks_assets/Arme/BalleAiguisee.png"
+  },
+  {
+    "name": "Balles explosives",
+    "img": "/perks_assets/Arme/BalleExplosive.png"
+  },
+  {
+    "name": "Allumez le feu",
+    "img": "/perks_assets/Arme/BalleFuselees.png"
+  },
+  {
+    "name": "Balles soignantes",
+    "img": "/perks_assets/Arme/Bullet_heal_car.png"
+  },
+  {
+    "name": "Balles lourdes",
+    "img": "/perks_assets/Arme/Bullet_heavy_car.png"
+  },
+  {
+    "name": "Balles autoguidées",
+    "img": "/perks_assets/Arme/BalleAutoguidees.png"
+  },
+  {
+    "name": "Tir multiple",
+    "img": "/perks_assets/Arme/TirMultiple.png"
+  },
+  {
+    "name": "Balles perçantes",
+    "img": "/perks_assets/Arme/BallePercentes.png"
+  },
+  {
+    "name": "Sans rien voir",
+    "img": "/perks_assets/Personnage/Omniscient.png"
+  },
+  {
+    "name": "Eclats de balles",
+    "img": "/perks_assets/Arme/EclatsDeBalle.png"
+  },
+  {
+    "name": "Balles rapides",
+    "img": "/perks_assets/Arme/BalleFuselees.png"
+  },
+  {
+    "name": "Assurance",
+    "img": "/perks_assets/Arme/FinDeChargeur.png"
+  },
+  {
+    "name": "La chancla",
+    "img": "/perks_assets/Arme/LaChancla.png"
+  },
+  {
+    "name": "Meilleurs critiques",
+    "img": "/perks_assets/Arme/Bullet_crit_power_car.png"
+  },
+  {
+    "name": "Tir rapide",
+    "img": "/perks_assets/Arme/TirRapide.png"
+  },
+  {
+    "name": "Pleine tête",
+    "img": "/perks_assets/Arme/TirALaTete.png"
+  },
+  {
+    "name": "Extension de chargeur",
+    "img": "/perks_assets/Arme/ExtensionChargeur.png"
+  },
+  {
+    "name": "Viseur",
+    "img": "/perks_assets/Arme/Viseur.png"
+  },
+  {
+    "name": "Vol de vie",
+    "img": "/perks_assets/Arme/Bullet_steal_life_car.png"
+  },
+  {
+    "name": "Lance grenade",
+    "img": "/perks_assets/ExtensionArme/LanceGrenade.png"
+  },
+  {
+    "name": "Laser",
+    "img": "/perks_assets/ExtensionArme/Laser.png"
+  },
+  {
+    "name": "Fusil à pompe",
+    "img": "/perks_assets/ExtensionArme/Shotgun_car.png"
+  },
+  {
+    "name": "Grenade anti gravité",
+    "img": "/perks_assets/Grenade/Grenade_antigrav_car.png"
+  },
+  {
+    "name": "Grenade à fragmentation",
+    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+  },
+  {
+    "name": "Grenade incendiaire",
+    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+  },
+  {
+    "name": "Grenadeception",
+    "img": "/perks_assets/Grenade/Grenadeception.png"
+  },
+  {
+    "name": "Grenade réactive",
+    "img": "/perks_assets/Grenade/GrenadeReactive.png"
+  },
+  {
+    "name": "Grenade répulsive",
+    "img": "/perks_assets/Grenade/GrenadeDeForce.png"
+  },
+  {
+    "name": "Grenade fumigène",
+    "img": "/perks_assets/Grenade/GrenadeFumigene.png"
+  },
+  {
+    "name": "Grenade collante",
+    "img": "/perks_assets/Grenade/GrenadeCollante.png"
+  },
+  {
+    "name": "Coup de crosse",
+    "img": "/perks_assets/Couteau/Skill_CAC.png"
+  },
+  {
+    "name": "Couteau pointu",
+    "img": "/perks_assets/Couteau/CouteauPointu.png"
+  },
+  {
+    "name": "Couteau médical",
+    "img": "/perks_assets/Couteau/CouteauDeSurvie.png"
+  },
+  {
+    "name": "Pic à glace",
+    "img": "/perks_assets/Couteau/PicAGlace.png"
+  },
+  {
+    "name": "A couteau sorti",
+    "img": "/perks_assets/Couteau/ACouteauSorti.png"
+  },
+  {
+    "name": "Couteau de lancer",
+    "img": "/perks_assets/Couteau/LancerDeCouteau.png"
+  },
+  {
+    "name": "Echange équivalent",
+    "img": "/perks_assets/Autres/Echange_equivalent_car.png"
+  },
+  {
+    "name": "Vélocité maximale",
+    "img": "/perks_assets/Personnage/Rage_to_run_car.png"
+  },
+  {
+    "name": "Sniper",
+    "img": "/perks_assets/Autres/Sniper_car.png"
+  }
+]
