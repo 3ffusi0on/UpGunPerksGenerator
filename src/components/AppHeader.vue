@@ -14,6 +14,5 @@
 
 <script setup lang="ts">
 const title = "UpGun Perks Generator";
-const warningMessage =
-  "Beta version - Des erreurs de noms ou d'images sont présentes pour le moment.";
+const warningMessage = undefined;
 </script>
