@@ -12,10 +12,6 @@
     "img": "/perks_assets/Personnage/Charged_spray_car.png"
   },
   {
-    "name": "Explosion Contrôlée",
-    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
-  },
-  {
     "name": "Dash",
     "img": "/perks_assets/Personnage/Dash.png"
   },
@@ -45,23 +41,27 @@
   },
   {
     "name": "Charge lourde",
-    "img": "/perks_assets/Personnage/Charged_spray_car.png"
+    "img": "/perks_assets/Personnage/Flying_magazine_car.png"
   },
   {
     "name": "Fusil de feu",
-    "img": "/perks_assets/ExtensionArme/Shotgun_car.png"
+    "img": "/perks_assets/Personnage/FusilDeFeu.png"
   },
   {
     "name": "Boost multiplié",
     "img": "/perks_assets/Personnage/Buff_multiplier_car.png"
   },
   {
+    "name": "Explosion Contrôlée",
+    "img": "/perks_assets/Personnage/ExplosionControlee.png"
+  },
+  {
     "name": "Explosion Contrôlée Condensée",
-    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+    "img": "/perks_assets/Personnage/ExplosionControleeCondensee.png"
   },
   {
     "name": "Explosion Contrôlée Spécialisée",
-    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+    "img": "/perks_assets/Personnage/ExplosionControleeSpe.png"
   },
   {
     "name": "Dash percutant",
@@ -85,11 +85,11 @@
   },
   {
     "name": "Long slide",
-    "img": "/perks_assets/Personnage/Glissade.png"
+    "img": "/perks_assets/Personnage/GlissadeLong.png"
   },
   {
     "name": "Dash enflammé",
-    "img": "/perks_assets/Personnage/Dash.png"
+    "img": "/perks_assets/Personnage/DashFire.png"
   },
   {
     "name": "Tremblement de terre",
@@ -109,7 +109,7 @@
   },
   {
     "name": "Refroidissement",
-    "img": "/perks_assets/Personnage/AsDuRechargement.png"
+    "img": "/perks_assets/Personnage/Refroidissement.png"
   },
   {
     "name": "Boost de vie",
@@ -169,11 +169,11 @@
   },
   {
     "name": "Laser collatéral",
-    "img": "/perks_assets/ExtensionArme/Laser.png"
+    "img": "/perks_assets/Laser/LaserColl.png"
   },
   {
     "name": "Laser réfléchi",
-    "img": "/perks_assets/ExtensionArme/Laser.png"
+    "img": "/perks_assets/Laser/LaserReflechi.png"
   },
   {
     "name": "Viseur laser",
@@ -181,7 +181,7 @@
   },
   {
     "name": "Boomerang",
-    "img": "/perks_assets/Arme/LaChancla.png"
+    "img": "/perks_assets/Arme/Boomerang.png"
   },
   {
     "name": "Ricochet",
@@ -197,7 +197,7 @@
   },
   {
     "name": "Allumez le feu",
-    "img": "/perks_assets/Arme/BalleFuselees.png"
+    "img": "/perks_assets/Arme/AllumerLeFeu.png"
   },
   {
     "name": "Balles soignantes",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Sans rien voir",
-    "img": "/perks_assets/Personnage/Omniscient.png"
+    "img": "/perks_assets/Arme/SeeNothing.png"
   },
   {
     "name": "Eclats de balles",
@@ -285,7 +285,7 @@
   },
   {
     "name": "Grenade incendiaire",
-    "img": "/perks_assets/Grenade/GrenadeFragmentation.png"
+    "img": "/perks_assets/Grenade/GrenadeFire.png"
   },
   {
     "name": "Grenadeception",
@@ -337,7 +337,7 @@
   },
   {
     "name": "Vélocité maximale",
-    "img": "/perks_assets/Personnage/Rage_to_run_car.png"
+    "img": "/perks_assets/Autres/VelociteMax.png"
   },
   {
     "name": "Sniper",
