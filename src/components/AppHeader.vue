@@ -7,7 +7,10 @@
       >
         {{ warningMessage }}
       </div>
-      <h1 class="text-3xl font-bold text-center">{{ title }}</h1>
+      <div class="flex items-center justify-center gap-4">
+        <img src="/logo.jpg" alt="UpGun Logo" class="h-12 w-auto rounded" />
+        <h1 class="text-3xl font-bold text-center">{{ title }}</h1>
+      </div>
     </div>
   </header>
 </template>
