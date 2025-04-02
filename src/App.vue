@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-900 flex flex-col">
+  <div class="min-h-screen bg-gray-900 flex flex-col bg-cover bg-no-repeat">
     <AppHeader />
     <main class="flex-grow container mx-auto px-4">
       <PerksSelector @generate="generatePerks" />
@@ -31,7 +31,16 @@
         </button>
       </div>
 
-      <PerksGrid :perks="filteredAndSortedPerks" />
+      <!-- Placeholder image when no perks are selected -->
+      <div v-if="perks.length === 0" class="flex justify-center items-center py-10">
+        <img
+          src="/Ameliorations_thumb.webp"
+          alt="UpGun Perks"
+          class="max-w-full max-h-64 opacity-80"
+        />
+      </div>
+
+      <PerksGrid v-if="perks.length > 0" :perks="filteredAndSortedPerks" />
     </main>
     <AppFooter />
   </div>
@@ -89,3 +98,5 @@ const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 </script>
+
+<style></style>
