@@ -1,7 +1,8 @@
 {
-  "name": "vite-vue-typescript-starter",
+  "name": "upgun-perks-generator",
+  "version": "0.0.1",
+  "description": "A web app for generating perks for the game Upgun.",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,7 +20,7 @@
     "prettier": "3.5.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
-    "vite": "^5.4.2",
+    "vite": "^6.2.4",
     "vue-tsc": "^2.1.4"
   }
 }

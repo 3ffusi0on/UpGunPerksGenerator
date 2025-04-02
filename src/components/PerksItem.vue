@@ -16,23 +16,19 @@
     </div>
 
     <div class="flex justify-center mt-auto">
-      <img
-        :src="perk.img"
-        :alt="perk.name"
-        class="w-auto h-24 object-contain"
-      />
+      <img :src="perk.img" :alt="perk.name" class="w-auto h-24 object-contain" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Perks } from "../types/perks";
+import type { Perks } from '../types/perks'
 
 defineProps<{
-  perk: Perks;
-}>();
+  perk: Perks
+}>()
 
 const capitalizeFirstLetter = (string: string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 </script>

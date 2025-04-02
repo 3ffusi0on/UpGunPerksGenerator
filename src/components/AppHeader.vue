@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-const title = "UpGun Perks Generator";
-const warningMessage = undefined;
+const title = 'UpGun Perks Generator'
+const warningMessage = undefined
 </script>

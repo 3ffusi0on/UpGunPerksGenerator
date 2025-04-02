@@ -31,31 +31,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
 const emit = defineEmits<{
-  (e: "generate", count: number, seed?: string): void;
-}>();
+  (e: 'generate', count: number, seed?: string): void
+}>()
 
-const perksCount = ref(22);
-const seed = ref("");
+const perksCount = ref(22)
+const seed = ref('')
 
 const generateRandomSeed = (): string => {
-  return Math.random().toString(36).substring(2, 15);
-};
+  return Math.random().toString(36).substring(2, 15)
+}
 
 const generatePerks = () => {
   if (perksCount.value < 1) {
-    perksCount.value = 1;
+    perksCount.value = 1
   } else if (perksCount.value > 86) {
-    perksCount.value = 86;
+    perksCount.value = 86
   }
 
-  const currentSeed = seed.value || generateRandomSeed();
+  const currentSeed = seed.value || generateRandomSeed()
   if (!seed.value) {
-    seed.value = currentSeed;
+    seed.value = currentSeed
   }
 
-  emit("generate", perksCount.value, currentSeed);
-};
+  emit('generate', perksCount.value, currentSeed)
+}
 </script>
