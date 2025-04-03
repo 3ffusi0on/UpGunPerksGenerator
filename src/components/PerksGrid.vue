@@ -13,7 +13,12 @@
           class="grid grid-cols-none gap-6 p-4 justify-start"
           style="grid-template-columns: repeat(auto-fill, minmax(180px, 220px))"
         >
-          <PerksItem v-for="perk in group.perks" :key="perk.name" :perk="perk" />
+          <PerksItem
+            v-for="perk in group.perks"
+            :key="perk.name"
+            :perk="perk"
+            @regenerate="handleRegeneratePerk"
+          />
         </div>
       </div>
     </template>
@@ -22,7 +27,12 @@
       class="grid grid-cols-none gap-6 p-4 justify-start"
       style="grid-template-columns: repeat(auto-fill, minmax(180px, 220px))"
     >
-      <PerksItem v-for="perk in perks" :key="perk.name" :perk="perk" />
+      <PerksItem
+        v-for="perk in perks"
+        :key="perk.name"
+        :perk="perk"
+        @regenerate="handleRegeneratePerk"
+      />
     </div>
   </div>
 </template>
@@ -34,6 +44,10 @@ import PerksItem from './PerksItem.vue'
 
 const props = defineProps<{
   perks: Perks[]
+}>()
+
+const emit = defineEmits<{
+  (e: 'regeneratePerk', perk: Perks): void
 }>()
 
 const groupedPerks = computed(() => {
@@ -58,6 +72,10 @@ const groupedPerks = computed(() => {
 const showTypeHeadings = computed(() => {
   return groupedPerks.value.length > 1
 })
+
+const handleRegeneratePerk = (perk: Perks) => {
+  emit('regeneratePerk', perk)
+}
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)

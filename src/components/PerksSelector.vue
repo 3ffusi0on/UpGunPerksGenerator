@@ -22,10 +22,16 @@
       />
     </div>
     <button
-      @click="generatePerks"
+      @click="generatePerksWithSeed"
+      class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors"
+    >
+      Utiliser ce Seed
+    </button>
+    <button
+      @click="generatePerksWithNewSeed"
       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
     >
-      Générer les Perks
+      Générer avec Seed aléatoire
     </button>
   </div>
 </template>
@@ -44,18 +50,29 @@ const generateRandomSeed = (): string => {
   return Math.random().toString(36).substring(2, 15)
 }
 
-const generatePerks = () => {
+const validatePerksCount = () => {
   if (perksCount.value < 1) {
     perksCount.value = 1
   } else if (perksCount.value > 86) {
     perksCount.value = 86
   }
+}
 
+const generatePerksWithSeed = () => {
+  validatePerksCount()
   const currentSeed = seed.value || generateRandomSeed()
   if (!seed.value) {
     seed.value = currentSeed
   }
 
   emit('generate', perksCount.value, currentSeed)
+}
+
+const generatePerksWithNewSeed = () => {
+  validatePerksCount()
+  const newSeed = generateRandomSeed()
+  seed.value = newSeed
+
+  emit('generate', perksCount.value, newSeed)
 }
 </script>

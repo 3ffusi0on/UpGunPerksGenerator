@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { PerkSelector } from '../utils/perksSelector'
+import type { Perks } from '../types/perks'
 
 export function usePerkSelector() {
   const perkSelector = ref<PerkSelector | null>(null)
@@ -22,7 +23,6 @@ export function usePerkSelector() {
     }
 
     try {
-      // Store the current seed
       if (seed) {
         currentSeed.value = seed
       }
@@ -30,6 +30,28 @@ export function usePerkSelector() {
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'Failed to select perks'
       return []
+    }
+  }
+
+  const regenerateSinglePerk = (perk: Perks, currentPerks: Perks[] = []): Perks | null => {
+    if (!perkSelector.value) {
+      error.value = 'Perk selector not initialized'
+      return null
+    }
+
+    try {
+      const seed = currentSeed.value || Math.random().toString(36).substring(2, 15)
+      if (!currentSeed.value) {
+        currentSeed.value = seed
+      }
+
+      const currentPerkNames = currentPerks.map(p => p.name)
+
+      const newPerk = perkSelector.value.selectSinglePerkOfType(perk.type, seed, currentPerkNames)
+      return newPerk
+    } catch (err) {
+      error.value = err instanceof Error ? err.message : 'Failed to regenerate perk'
+      return null
     }
   }
 
@@ -50,6 +72,7 @@ export function usePerkSelector() {
   return {
     initializeSelector,
     getRandomPerks,
+    regenerateSinglePerk,
     resetSelector,
     getAvailableCount,
     getCurrentSeed,

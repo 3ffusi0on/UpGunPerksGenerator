@@ -31,7 +31,6 @@
         </button>
       </div>
 
-      <!-- Placeholder image when no perks are selected -->
       <div v-if="perks.length === 0" class="flex justify-center items-center py-10">
         <img
           src="/Ameliorations_thumb.webp"
@@ -40,7 +39,11 @@
         />
       </div>
 
-      <PerksGrid v-if="perks.length > 0" :perks="filteredAndSortedPerks" />
+      <PerksGrid
+        v-if="perks.length > 0"
+        :perks="filteredAndSortedPerks"
+        @regeneratePerk="regenerateSinglePerk"
+      />
     </main>
     <AppFooter />
   </div>
@@ -55,7 +58,11 @@ import PerksSelector from './components/PerksSelector.vue'
 import PerksGrid from './components/PerksGrid.vue'
 import AppFooter from './components/AppFooter.vue'
 
-const { initializeSelector, getRandomPerks } = usePerkSelector()
+const {
+  initializeSelector,
+  getRandomPerks,
+  regenerateSinglePerk: regeneratePerk,
+} = usePerkSelector()
 const perks = ref<Perks[]>([])
 const activeType = ref<string>('')
 
@@ -66,6 +73,16 @@ onMounted(() => {
 const generatePerks = (count: number, seed?: string) => {
   perks.value = getRandomPerks(count, seed)
   activeType.value = ''
+}
+
+const regenerateSinglePerk = (perk: Perks) => {
+  const newPerk = regeneratePerk(perk, perks.value)
+  if (newPerk) {
+    const perkIndex = perks.value.findIndex(p => p.name === perk.name)
+    if (perkIndex !== -1) {
+      perks.value.splice(perkIndex, 1, newPerk)
+    }
+  }
 }
 
 const uniquePerkTypes = computed(() => {
@@ -79,13 +96,6 @@ const filteredAndSortedPerks = computed(() => {
   if (activeType.value) {
     result = result.filter(perk => perk.type === activeType.value)
   }
-
-  result.sort((a, b) => {
-    if (a.type !== b.type) {
-      return a.type.localeCompare(b.type)
-    }
-    return a.name.localeCompare(b.name)
-  })
 
   return result
 })
