@@ -12,7 +12,10 @@
     </div>
 
     <div class="absolute top-2 right-2 z-20">
-      <span class="px-2 py-0.5 text-xs rounded-full bg-blue-600 text-white">
+      <span
+        class="px-2 py-0.5 text-xs rounded-full text-gray-900"
+        :class="getCategoryColorClass(perk.type)"
+      >
         {{ capitalizeFirstLetter(perk.type) }}
       </span>
     </div>
@@ -53,6 +56,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Perks } from '../types/perks'
+import { getCategoryColorClass } from '../utils/categoryColors'
 
 const props = defineProps<{
   perk: Perks

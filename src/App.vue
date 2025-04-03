@@ -20,11 +20,12 @@
           v-for="type in uniquePerkTypes"
           :key="type"
           class="px-3 py-1 rounded-full text-sm font-medium transition-colors"
-          :class="
+          :class="[
             activeType === type
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-          "
+              ? getCategoryColorClass(type)
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600',
+            getCategoryColorClass(type) ? 'text-gray-900' : '',
+          ]"
           @click="setActiveType(type)"
         >
           {{ capitalizeFirstLetter(type) }}
@@ -35,7 +36,7 @@
         <img
           src="/Ameliorations_thumb.webp"
           alt="UpGun Perks"
-          class="max-w-full max-h-64 opacity-80"
+          class="max-w-full max-h-80 opacity-80"
         />
       </div>
 
@@ -53,6 +54,7 @@
 import { ref, onMounted, computed } from 'vue'
 import type { Perks } from './types/perks.ts'
 import { usePerkSelector } from './composables/usePerkSelector.ts'
+import { getCategoryColorClass } from './utils/categoryColors.ts'
 import AppHeader from './components/AppHeader.vue'
 import PerksSelector from './components/PerksSelector.vue'
 import PerksGrid from './components/PerksGrid.vue'
