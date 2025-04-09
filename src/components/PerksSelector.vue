@@ -11,40 +11,93 @@
         class="bg-gray-700 text-white px-4 py-2 rounded-lg"
       />
     </div>
-    <div class="flex items-center gap-4">
-      <label for="seed" class="text-white">Seed:</label>
-      <input
-        type="text"
-        id="seed"
-        v-model="seed"
-        placeholder="Laisser vide pour aléatoire"
-        class="bg-gray-700 text-white px-4 py-2 rounded-lg w-60"
-      />
+
+    <div class="relative">
+      <div
+        v-if="showSeedPopover"
+        class="seed-popover absolute top-12 left-0 z-10 bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-600 w-80"
+      >
+        <div class="flex flex-col gap-2 mb-3">
+          <input
+            type="text"
+            id="seed"
+            v-model="seed"
+            placeholder="Aléatoire si vide"
+            class="bg-gray-700 text-white px-4 py-2 rounded-lg w-full"
+          />
+        </div>
+        <button
+          @click="generatePerksWithSeed"
+          class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors w-full"
+        >
+          Utiliser ce Seed
+        </button>
+      </div>
+
+      <button
+        @click="toggleSeedPopover"
+        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
+      >
+        <SettingsIcon />
+        Utiliser un Seed
+      </button>
     </div>
-    <button
-      @click="generatePerksWithSeed"
-      class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors"
-    >
-      Utiliser ce Seed
-    </button>
+
     <button
       @click="generatePerksWithNewSeed"
-      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
     >
-      Générer avec Seed aléatoire
+      <RefreshIcon />
+      Génération aléatoire
+    </button>
+    <button
+      :disabled="!seed"
+      @click="shareUrl"
+      class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
+    >
+      <ShareIcon />
+      Partager
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import SettingsIcon from '../assets/icons/SettingsIcon.vue'
+import RefreshIcon from '../assets/icons/RefreshIcon.vue'
+import ShareIcon from '../assets/icons/ShareIcon.vue'
 
 const emit = defineEmits<{
   (e: 'generate', count: number, seed?: string): void
+  (e: 'share-url'): void
 }>()
 
 const perksCount = ref(22)
 const seed = ref('')
+const showSeedPopover = ref(false)
+
+const toggleSeedPopover = () => {
+  showSeedPopover.value = !showSeedPopover.value
+}
+
+const closePopoverOnClickOutside = (event: MouseEvent) => {
+  const target = event.target as HTMLElement
+  if (
+    showSeedPopover.value &&
+    !target.closest('.seed-popover') &&
+    !target.closest('button[class*="bg-green-600"]')
+  ) {
+    showSeedPopover.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', closePopoverOnClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', closePopoverOnClickOutside)
+})
 
 const generateRandomSeed = (): string => {
   return Math.random().toString(36).substring(2, 15)
@@ -75,4 +128,21 @@ const generatePerksWithNewSeed = () => {
 
   emit('generate', perksCount.value, newSeed)
 }
+
+const shareUrl = () => {
+  emit('share-url')
+}
+
+const setSeed = (newSeed: string) => {
+  seed.value = newSeed
+}
+
+const setPerksCount = (count: number) => {
+  perksCount.value = count
+}
+
+defineExpose({
+  setSeed,
+  setPerksCount,
+})
 </script>

@@ -1,8 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-900 flex flex-col bg-cover bg-no-repeat">
+    <ToastNotification ref="toast" message="URL copiée dans le presse-papiers!" type="success" />
     <AppHeader />
     <main class="flex-grow container mx-auto px-4">
-      <PerksSelector @generate="generatePerks" />
+      <PerksSelector @generate="generatePerks" @share-url="shareUrl" ref="perksSelector" />
 
       <div v-if="perks.length > 0" class="flex flex-wrap justify-center gap-2 mb-4">
         <button
@@ -59,6 +60,7 @@ import AppHeader from './components/AppHeader.vue'
 import PerksSelector from './components/PerksSelector.vue'
 import PerksGrid from './components/PerksGrid.vue'
 import AppFooter from './components/AppFooter.vue'
+import ToastNotification from './components/ToastNotification.vue'
 
 const {
   initializeSelector,
@@ -67,14 +69,77 @@ const {
 } = usePerkSelector()
 const perks = ref<Perks[]>([])
 const activeType = ref<string>('')
+const perksSelector = ref<InstanceType<typeof PerksSelector> | null>(null)
+const toast = ref<InstanceType<typeof ToastNotification> | null>(null)
+
+const getQueryParam = (param: string): string | null => {
+  const urlParams = new URLSearchParams(window.location.search)
+  return urlParams.get(param)
+}
+
+const updateUrlParams = (params: { seed?: string; count?: number }): void => {
+  const url = new URL(window.location.href)
+
+  if (params.seed) {
+    url.searchParams.set('seed', params.seed)
+  }
+
+  if (params.count) {
+    url.searchParams.set('count', params.count.toString())
+  }
+
+  window.history.replaceState({}, '', url)
+}
+
+const shareUrl = async () => {
+  try {
+    await navigator.clipboard.writeText(window.location.href)
+    if (toast.value) {
+      toast.value.show()
+    }
+  } catch (err) {
+    console.error('Failed to copy URL:', err)
+    if (toast.value) {
+      toast.value.show({
+        message: "Échec de la copie de l'URL",
+        type: 'error',
+      })
+    }
+  }
+}
 
 onMounted(() => {
   initializeSelector()
+
+  const seedFromUrl = getQueryParam('seed')
+  const countFromUrl = getQueryParam('count')
+
+  if (perksSelector.value) {
+    let perksCount = 22
+
+    if (countFromUrl) {
+      const parsedCount = parseInt(countFromUrl, 10)
+      if (!isNaN(parsedCount) && parsedCount >= 1 && parsedCount <= 86) {
+        perksCount = parsedCount
+        perksSelector.value.setPerksCount(parsedCount)
+      }
+    }
+
+    if (seedFromUrl) {
+      perksSelector.value.setSeed(seedFromUrl)
+      generatePerks(perksCount, seedFromUrl)
+    }
+  }
 })
 
 const generatePerks = (count: number, seed?: string) => {
   perks.value = getRandomPerks(count, seed)
   activeType.value = ''
+
+  updateUrlParams({
+    count: count,
+    seed: seed,
+  })
 }
 
 const regenerateSinglePerk = (perk: Perks) => {
